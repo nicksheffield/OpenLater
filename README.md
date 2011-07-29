@@ -1,3 +1,3 @@
 # OpenLater
 
-Due to be updated soon
+Due to be updated soon.
