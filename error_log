@@ -1,0 +1,76 @@
+[29-Jul-2011 15:06:25] PHP Fatal error:  Call to protected method JSMin::min() from context '' in /home/nickshe1/public_html/ron/bookmarklet.php on line 68
+[29-Jul-2011 15:06:27] PHP Fatal error:  Call to protected method JSMin::min() from context '' in /home/nickshe1/public_html/ron/bookmarklet.php on line 68
+[29-Jul-2011 15:06:47] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(68): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
+[29-Jul-2011 15:06:49] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(68): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
+[29-Jul-2011 15:07:47] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(68): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
+[29-Jul-2011 15:07:50] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(68): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
+[29-Jul-2011 15:08:45] PHP Parse error:  syntax error, unexpected T_PAAMAYIM_NEKUDOTAYIM, expecting ',' or ';' in /home/nickshe1/public_html/ron/bookmarklet.php on line 68
+[29-Jul-2011 15:09:53] PHP Fatal error:  Class 'JSMin' not found in /home/nickshe1/public_html/ron/bookmarklet.php on line 68
+[29-Jul-2011 15:10:08] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(68): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
+[29-Jul-2011 15:10:12] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(68): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
+[29-Jul-2011 15:10:44] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(66): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
+[29-Jul-2011 15:10:50] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(66): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
+[29-Jul-2011 15:11:42] PHP Fatal error:  Uncaught exception 'JSMinException' with message 'Unterminated string literal.' in /home/nickshe1/public_html/ron/jsmin.php:127
+Stack trace:
+#0 /home/nickshe1/public_html/ron/jsmin.php(304): JSMin->action(1)
+#1 /home/nickshe1/public_html/ron/jsmin.php(75): JSMin->min()
+#2 /home/nickshe1/public_html/ron/bookmarklet.php(70): JSMin::minify('(function(){???...')
+#3 /home/nickshe1/public_html/ron/index.php(107): include('/home/nickshe1/...')
+#4 {main}
+  thrown in /home/nickshe1/public_html/ron/jsmin.php on line 127
