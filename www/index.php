@@ -58,12 +58,12 @@
 	});
 	
 	$silex->get('delete/{id}', function($id) use($db){
-    	echo $db->del('id',$id);
+		echo $db->del('id',$id);
 	});
-    
-    $silex->get('store/{id}', function($id) use($db){
-    	$db->where('id',$id);
-        echo $db->update('stored',1);
+	
+	$silex->get('store/{id}', function($id) use($db){
+		$db->where('id',$id);
+		echo $db->update('stored',1);
 	});
 	
 	
