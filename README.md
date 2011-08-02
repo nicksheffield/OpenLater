@@ -1,7 +1,9 @@
 # OpenLater
 
+Keep track of the pages you are too busy to read.
+
 ## To Do
 
 * User authentication
-* "suggest to a friend"
+* Suggest to a friend
 * Link title rename
