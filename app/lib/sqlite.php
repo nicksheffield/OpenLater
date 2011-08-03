@@ -126,7 +126,11 @@ class sqlite {
 	
 	
 # Insert a record to the database
-	
+	/**
+         *
+         * @param array $arr array of key=>value pairs to be insterted into the database
+         * @return boolean
+         */
 	public function insert($arr){
 		
 		$q = "INSERT INTO $this->table( ";
