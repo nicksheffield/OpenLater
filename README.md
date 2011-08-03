@@ -1,8 +1,10 @@
 # OpenLater
 
-Readme to come soon
+Keep track of the pages you are too busy to read.
 
+## To Do
 
-### Todo
-
+* User authentication
+* Suggest to a friend
+* Link title rename
 * Use the webkit scrollbar changes to make a nicer looking page frame
