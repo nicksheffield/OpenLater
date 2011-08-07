@@ -34,7 +34,7 @@
 	$silex->get('unread', function(){
 		page('links')->unread();
 		
-		return '<!-- success -->;
+		return '<!-- success -->';
 	});
 	
 	/**
