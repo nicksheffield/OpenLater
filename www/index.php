@@ -31,14 +31,8 @@
 	 * @return void
 	 * @author Nick Sheffield
 	 **/
-	$silex->get('unread', function(){
-		
-		
-		page('links')->unread();
-		
-		echo 'yo';
-		
-		return '<!-- success -->';
+	$silex->get('unread', function(){	
+		return page('links')->unread();
 	});
 	
 	/**
@@ -48,7 +42,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('stored', function(){
-		page('links')->stored();
+		return page('links')->stored();
 	});
 	
 	
@@ -59,7 +53,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('bookmark', function(){
-		page('bookmarklet')->index();
+		return page('bookmarklet')->index();
 	});
 	
 	
@@ -70,7 +64,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('create', function(){
-		page('actions')->create($_GET['t'],$_GET['u']);
+		return page('actions')->create($_GET['t'],$_GET['u']);
 	});
 	
 	
@@ -83,7 +77,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('delete/{id}', function($id){
-		page('actions')->delete($id);
+		return page('actions')->delete($id);
 	});
 	
 	
@@ -96,7 +90,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('store/{id}', function($id){
-		page('actions')->store($id);
+		return page('actions')->store($id);
 	});
 	
 	

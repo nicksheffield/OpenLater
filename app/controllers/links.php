@@ -7,7 +7,7 @@ class Links extends Controller{
 		$this->db->where('stored','0');
 		$data['result'] = $this->db->get('id','title','url','date','email');
 		
-		$this->generate('links',$data);
+		return $this->generate('links',$data);
 	}
 	
 	function stored(){
@@ -17,7 +17,7 @@ class Links extends Controller{
 		
 		echo $data['results'];
 		
-		$this->generate('links',$data);
+		return $this->generate('links',$data);
 	}
 	
 	function display_all(){

@@ -24,10 +24,14 @@ class Controller{
 		
 		if($data) extract($data,EXTR_OVERWRITE);
 		
-		include(APP.'views/layout/header.php');
-		include(APP.'views/layout/nav.php');
-		include(APP.'views/'.$view_name.'.php');
-		include(APP.'views/layout/footer.php');
+		$_pages = '';
+		
+		$_pages .= $this->load_view('layout/header',$data,true);
+		$_pages .= $this->load_view('layout/nav',$data,true);
+		$_pages .= $this->load_view($view_name,$data,true);
+		$_pages .= $this->load_view('layout/footer',$data,true);
+		
+		return $_pages;
 	}
 	
 	/**
@@ -45,9 +49,11 @@ class Controller{
 		if($data) extract($data,EXTR_OVERWRITE);
 		
 		if($return){
-			return include(APP.'/views/'.$view_name.'.php');
+			ob_start();
+		    include(APP.'views/'.$view_name.'.php');
+		    return ob_get_clean();
 		}else{
-			include(APP.'/views/'.$view_name.'.php');
+			include(APP.'views/'.$view_name.'.php');
 		}
 	}
 }

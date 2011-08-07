@@ -4,7 +4,7 @@
 class Bookmarklet extends Controller{
 	
 	function index(){
-		$this->generate('bookmarklet');
+		return $this->generate('bookmarklet');
 	}
 	
 }

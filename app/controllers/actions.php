@@ -15,8 +15,8 @@ class Actions extends Controller{
 	 * @author Nick Sheffield
 	 **/
 	function create($title,$url){
-		echo 'title: '.$title.'<br/>';
-		echo 'url: '.$url.'<br/>';
+		$_output = 'title: '.$title.'<br/>';
+		$_output .= 'url: '.$url.'<br/>';
 		
 		$this->db->table('links');
 		$this->db->insert(array(
@@ -25,6 +25,8 @@ class Actions extends Controller{
 			'date'=>date('c'),
 			'email'=>'numbereft@gmail.com'
 		));
+		
+		return $_output;
 		
 	}
 	
@@ -37,7 +39,7 @@ class Actions extends Controller{
 	 * @author Nick Sheffield
 	 **/
 	function delete($id){
-		echo $this->db->del('id',$id);
+		return $this->db->del('id',$id);
 	}
 	
 	/**
@@ -50,7 +52,7 @@ class Actions extends Controller{
 	 **/
 	function store($id){
 		$this->db->where('id',$id);
-		echo $this->db->update(array('stored'=>1));
+		return $this->db->update(array('stored'=>1));
 	}
 	
 }
