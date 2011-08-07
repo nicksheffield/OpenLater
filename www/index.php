@@ -14,8 +14,6 @@
 	 **/
 	$silex = new Silex\Application();
 	
-	echo 'yo';
-	
 	/**
 	 * If there is no page segment supplied in the url, redirect to the 'unread' page
 	 *
@@ -34,6 +32,8 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('unread', function(){
+		echo 'yo';
+		
 		page('links')->unread();
 		
 		return '<!-- success -->';
