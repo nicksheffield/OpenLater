@@ -4,11 +4,11 @@
 class Links extends Controller{
 	
 	function unread(){
-		echo 'unread1 ';
+		echo 'unread1<br/>';
 		$this->db->where('stored','0');
 		$data['result'] = $this->db->get('id','title','url','date','email');
 		
-		echo 'unread2 ';
+		echo 'unread2<br/>';
 		return $this->generate('links',$data);
 	}
 	

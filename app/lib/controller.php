@@ -6,11 +6,11 @@ class Controller{
 	protected $nav;
 	
 	function __construct($registry){
-		echo 'controller init1 ';
+		echo 'controller1<br/>';
 		$this->db = $registry->db;
-		echo 'controller init2 ';
+		echo 'controller2<br/>';
 		$this->nav = $registry->nav;
-		echo 'controller init3 ';
+		echo 'controller3<br/>';
 	}
 	
 	

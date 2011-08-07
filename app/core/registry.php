@@ -2,7 +2,7 @@
 
 class Registry{
 	
-	public $db = new sqlite('openlater');
+	public $db;
 	public $nav = array(
 		'unread'=>'unread',
 		'stored'=>'stored',
@@ -10,6 +10,7 @@ class Registry{
 	);
 	
 	function __construct(){
+		$this->db = new sqlite('openlater');
 		$this->db->start_table('links',"
 			CREATE TABLE links(
 			id INTEGER PRIMARY KEY,
