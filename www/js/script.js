@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	$('a.ajax').click(function(){
+	$('.actions a').click(function(){
 		var elem = $(this);
 		
 		if(elem.attr('href').indexOf('delete')>0){
@@ -9,9 +9,6 @@ $(document).ready(function(){
 		
 		$.ajax({
 			url:elem.attr('href'),
-			data:{
-				id:elem.data('id')
-			},
 			success:function(msg){
 				if(msg){
 					elem.parent().parent().fadeOut(500);

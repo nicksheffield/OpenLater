@@ -3,67 +3,117 @@
 	define('APP','../app/');
 	
 	require_once APP.'core/silex.phar';
-	require_once APP.'lib/page.php';
+	require_once APP.'lib/controller.php';
+	require_once APP.'lib/database.php';
 	require_once APP.'lib/sqlite.php';
+	require_once APP.'core/config.php';
 	
+	/**
+	 * The system that runs this app
+	 *
+	 * @var object
+	 **/
 	$silex = new Silex\Application();
 	
-	$db = new sqlite('openlater');
-	$db->start_table('links',"
-		CREATE TABLE links(
-		id INTEGER PRIMARY KEY,
-		title VARCHAR(100) NOT NULL,
-		url VARCHAR(255) NOT NULL,
-		date DATETIME NOT NULL,
-		stored VARCHAR(5) DEFAULT '0',
-		email VARCHAR(100) NOT NULL
-	)");
-	
-	
+	/**
+	 * If there is no page segment supplied in the url, redirect to the 'unread' page
+	 *
+	 * @return void
+	 * @author Nick Sheffield
+	 **/
 	$silex->get('/', function() use($silex){
 		return $silex->redirect('unread');
 	});
 	
-	$silex->get('unread', function() use($db){
-		
-		$page = new Page();
-		
-		$data['title'] = 'output';
-		$data['content'] = 'This is the result';
-		$data['result'] = $db->get('id','title','url','date','stored','email');
-		
-		$page->generate('unread',$data);
+	
+	/**
+	 * Display the unread links page page
+	 *
+	 * @return void
+	 * @author Nick Sheffield
+	 **/
+	$silex->get('unread', function(){
+		page('links')->unread();
 	});
 	
-	$silex->get('bookmark', function() use($db){
-		$page = new Page();
-		
-		$page->generate('bookmarklet');
+	/**
+	 * Display the stored links page page
+	 *
+	 * @return void
+	 * @author Nick Sheffield
+	 **/
+	$silex->get('stored', function(){
+		page('links')->stored();
 	});
 	
-	$silex->get('create', function() use($db){
-		echo 'title: '.$_GET['t'].'<br/>';
-		echo 'url: '.$_GET['u'].'<br/>';
-		
-		$db->table('links');
-		$db->insert(array(
-			'title'=>$_GET['t'],
-			'url'=>$_GET['u'],
-			'date'=>date('c'),
-			'email'=>'numbereft@gmail.com'
-		));
-		
-		# example url
-		# /create?t=html5%20shelf&u=http%3A%2F%2Fhtml5shelf.tumblr.com%2Fpage%2F5
+	
+	/**
+	 * Display the bookmark page
+	 *
+	 * @return void
+	 * @author Nick Sheffield
+	 **/
+	$silex->get('bookmark', function(){
+		page('bookmarklet')->index();
 	});
 	
-	$silex->get('delete/{id}', function($id) use($db){
-		echo $db->del('id',$id);
+	
+	/**
+	 * Create a link record based on a title and url
+	 *
+	 * @return void
+	 * @author Nick Sheffield
+	 **/
+	$silex->get('create', function(){
+		page('actions')->create($_GET['t'],$_GET['u']);
 	});
 	
-	$silex->get('store/{id}', function($id) use($db){
-		$db->where('id',$id);
-		echo $db->update('stored',1);
+	
+	/**
+	 * Delete a link record by it's id
+	 *
+	 * @var $id integer The id of the record to be deleted
+	 *
+	 * @return void
+	 * @author Nick Sheffield
+	 **/
+	$silex->get('delete/{id}', function($id){
+		page('actions')->delete($id);
+	});
+	
+	
+	/**
+	 * Move a link record to the stored page by it's id
+	 *
+	 * @var $id integer The id of the record to be stored
+	 *
+	 * @return void
+	 * @author Nick Sheffield
+	 **/
+	$silex->get('store/{id}', function($id){
+		page('actions')->store($id);
+	});
+	
+	
+	/**
+	 * Include a controller class and return a new instance of it.
+	 * Also, this function is responsible for passing along the config and database
+	 *
+	 * @var $name string The name of the class to be used
+	 *
+	 * @return object
+	 * @author Nick Sheffield
+	 **/
+	function page($name){
+		include_once(APP.'controllers/'.$name.'.php');
+		global $_config;
+		
+		return new $name(Database::init(),$_config);
+	}
+	
+	# for debugging purposes only
+	$silex->get('all', function(){
+		page('links')->display_all();
 	});
 	
 	
