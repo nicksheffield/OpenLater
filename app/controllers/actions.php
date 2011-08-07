@@ -24,7 +24,7 @@ class Actions extends Controller{
 			'title'=>$title,
 			'url'=>$url,
 			'date'=>date('c'),
-			'email'=>'numbereft@gmail.com'
+			'user_id'=>isset($_SESSION['id'])?$_SERVER['id']:'private'
 		));
 		
 		return $_output;

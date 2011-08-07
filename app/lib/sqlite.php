@@ -107,6 +107,7 @@ class sqlite {
 		if(!$this->where_conditions)  $this->where_conditions = ' WHERE ';
 		$this->where_conditions .= "$property='$value'";
 		
+		return $this;
 	}
 	
 	

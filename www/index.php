@@ -2,7 +2,7 @@
 	
 	/**
 	 *
-	 * begin the session
+	 * Begin the session
 	 *
 	 **/
 	session_start();
@@ -20,7 +20,11 @@
 	 *
 	 * @var constant
 	 **/
-	define('ENV','public');
+	if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){
+		define('ENV','private');
+	}else{
+		define('ENV','public');
+	}
 	
 	
 	/**

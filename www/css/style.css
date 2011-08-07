@@ -1,6 +1,6 @@
 
 a{-webkit-transition:color 0.2s ease-out;}
-li{-webkit-transition:background 0.2s ease-out;}
+li{-webkit-transition:all 0.2s ease-out;}
 
 body{
 	margin:40px 60px;

@@ -23,6 +23,11 @@ class Controller{
 	 **/
 	function generate($view_name,$data=false){
 		
+		$data['count'] = array(
+			'unread' => count($this->db->where('stored','0')->get('id')),
+			'stored' => count($this->db->where('stored','1')->get('id'))
+		);
+		
 		if($data) extract($data,EXTR_OVERWRITE);
 		
 		$_pages = '';
@@ -35,6 +40,7 @@ class Controller{
 		
 		return $_pages;
 	}
+	
 	
 	/**
 	 * Load a specific view. Also returns the view if the $return var is set to true
@@ -59,6 +65,13 @@ class Controller{
 		}
 	}
 	
+	
+	/**
+	 * Check if the user is logged in, if not, then redirect to the login page. Chainable
+	 *
+	 * @return object
+	 * @author Nick Sheffield
+	 **/
 	function auth(){
 		if(ENV=='public'){
 			if(!isset($_SESSION['id'])){
