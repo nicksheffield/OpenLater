@@ -33,9 +33,9 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('unread', function(){
-		echo 'before';
+		echo 'before ';
 		return page('links')->unread();
-		echo 'after';
+		echo 'after ';
 	});
 	
 	/**
@@ -107,9 +107,9 @@
 	 * @author Nick Sheffield
 	 **/
 	function page($name){
-		echo 'page1';
+		echo 'page1 ';
 		include_once(APP.'controllers/'.$name.'.php');
-		echo 'page2';
+		echo 'page2 ';
 		return new $name(new Registry);
 	}
 	
