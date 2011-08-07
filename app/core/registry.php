@@ -2,9 +2,14 @@
 
 class Registry{
 	
-	public function db(){
-		
-		$db = new sqlite('openlater');
+	public $db = new sqlite('openlater');
+	public $nav = array(
+		'unread'=>'unread',
+		'stored'=>'stored',
+		'bookmark'=>'bookmark'
+	);
+	
+	function __construct(){
 		$db->start_table('links',"
 			CREATE TABLE links(
 			id INTEGER PRIMARY KEY,
@@ -14,15 +19,6 @@ class Registry{
 			stored VARCHAR(5) DEFAULT '0',
 			email VARCHAR(100) NOT NULL
 		)");
-		
-		return $db;
 	}
 	
-	public function nav(){
-		return array(
-			'unread'=>'unread',
-			'stored'=>'stored',
-			'bookmark'=>'bookmark'
-		);
-	}
 }
