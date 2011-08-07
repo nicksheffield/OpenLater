@@ -32,9 +32,11 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('unread', function(){
-		echo 'yo';
+		
 		
 		page('links')->unread();
+		
+		echo 'yo';
 		
 		return '<!-- success -->';
 	});
