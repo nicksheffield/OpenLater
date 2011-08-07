@@ -3,12 +3,12 @@
 	define('APP','../app/');
 	
 	require_once APP.'core/silex.phar';
+	require_once APP.'core/registry.php';
 	require_once APP.'lib/controller.php';
 	require_once APP.'lib/sqlite.php';
-	require_once APP.'core/registry.php';
 	
 	/**
-	 * The system that runs this app
+	 * The system that this app runs on
 	 *
 	 * @var object
 	 **/
@@ -109,7 +109,8 @@
 		echo 'page1';
 		include_once(APP.'controllers/'.$name.'.php');
 		echo 'page2';
-		return new $name(new Registry);
+		$reg = new Registry;
+		return new $name($reg);
 	}
 	
 	# for debugging purposes only
