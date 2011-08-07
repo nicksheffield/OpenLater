@@ -28,6 +28,8 @@
 		$site = 'nicksheffield.com';
 	}
 	
+	echo $_SERVER['SERVER_ADDR'];
+	
 	define('SITE',$site);
 	
 	
