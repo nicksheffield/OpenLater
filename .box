@@ -1,2 +1,3 @@
 document_root: www/
 php_extensions: [sqlite]
+php_error_reporting: 'E_ALL'
