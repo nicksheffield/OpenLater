@@ -4,9 +4,8 @@
 	
 	require_once APP.'core/silex.phar';
 	require_once APP.'lib/controller.php';
-	require_once APP.'lib/database.php';
 	require_once APP.'lib/sqlite.php';
-	require_once APP.'core/config.php';
+	require_once APP.'core/registry.php';
 	
 	/**
 	 * The system that runs this app
@@ -108,7 +107,7 @@
 		include_once(APP.'controllers/'.$name.'.php');
 		global $_config;
 		
-		return new $name(Database::init(),$_config);
+		return new $name(new Registry);
 	}
 	
 	# for debugging purposes only

@@ -3,10 +3,11 @@
 class Controller{
 	
 	protected $db;
+	protected $nav;
 	
-	function __construct($database,$config){
-		$this->db = $database;
-		$this->config = $config;
+	function __construct($registry){
+		$this->db = $registry->db();
+		$this->nav = $registry->nav();
 	}
 	
 	

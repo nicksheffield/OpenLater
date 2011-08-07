@@ -1,8 +1,8 @@
 <?php
 
-class Database{
+class Registry{
 	
-	public static function init(){
+	public function db(){
 		
 		$db = new sqlite('openlater');
 		$db->start_table('links',"
@@ -16,5 +16,13 @@ class Database{
 		)");
 		
 		return $db;
+	}
+	
+	public function nav(){
+		return array(
+			'unread'=>'unread',
+			'stored'=>'stored',
+			'bookmark'=>'bookmark'
+		);
 	}
 }
