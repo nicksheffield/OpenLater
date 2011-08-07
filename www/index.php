@@ -17,8 +17,8 @@
 	
 	use Symfony\Component\HttpFoundation\Response;
 	
-	$app->error(function (\Exception $e, $code) {
-	    return new Response('We are sorry, but something went terribly wrong.', $code);
+	$silex->error(function (\Exception $e, $code) {
+		return new Response('We are sorry, but something went terribly wrong.', $code);
 	});
 	
 	/**
