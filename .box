@@ -1,1 +1,2 @@
 document_root: www/
+php_extensions: [sqlite]
