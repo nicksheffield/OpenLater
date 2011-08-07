@@ -20,11 +20,4 @@ class Links extends Controller{
 		return $this->generate('links',$data);
 	}
 	
-	function display_all(){
-		
-		echo '<pre>';
-		print_r($this->db->get('id','title','url','date','stored','email'));
-		echo '</pre>';
-	}
-	
 }

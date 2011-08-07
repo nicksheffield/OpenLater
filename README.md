@@ -6,7 +6,6 @@ Built with Silex and sqlite, using a Controller-View approach.
 
 ## To Do
 
-* User authentication
 * Suggest to a friend
 * Link title rename
 * Use the webkit scrollbar changes to make a nicer looking page frame

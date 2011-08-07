@@ -1,5 +1,11 @@
 <?php
 	
+	/**
+	 *
+	 * begin the session
+	 *
+	 **/
+	session_start();
 	
 	/**
 	 * The location of the app folder
@@ -24,7 +30,7 @@
 	require_once APP.'core/registry.php';
 	require_once APP.'lib/controller.php';
 	require_once APP.'lib/sqlite.php';
-	require_once APP.'lib/google_login.php';
+	require_once APP.'lib/openid.php';
 	
 	
 	/**
@@ -53,7 +59,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('/login', function(){
-		return page('user')->authenticate();
+		return page('user')->login();
 	});
 	
 	
@@ -64,7 +70,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('unread', function(){
-		return page('links')->unread();
+		return page('links')->auth()->unread();
 	});
 	
 	/**
@@ -74,7 +80,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('stored', function(){
-		return page('links')->stored();
+		return page('links')->auth()->stored();
 	});
 	
 	
@@ -85,7 +91,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('bookmark', function(){
-		return page('bookmarklet')->index();
+		return page('bookmarklet')->auth()->index();
 	});
 	
 	
@@ -96,7 +102,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('create', function(){
-		return page('actions')->create($_GET['t'],$_GET['u']);
+		return page('actions')->auth()->create($_GET['t'],$_GET['u']);
 	});
 	
 	
@@ -109,7 +115,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('delete/{id}', function($id){
-		return page('actions')->delete($id);
+		return page('actions')->auth()->delete($id);
 	});
 	
 	
@@ -122,7 +128,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('store/{id}', function($id){
-		return page('actions')->store($id);
+		return page('actions')->auth()->store($id);
 	});
 	
 	
@@ -139,11 +145,6 @@
 		include_once(APP.'controllers/'.$name.'.php');
 		return new $name(new Registry);
 	}
-	
-	# for debugging purposes only
-	$silex->get('all', function(){
-		page('links')->display_all();
-	});
 	
 	
 	

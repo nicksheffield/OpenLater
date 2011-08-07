@@ -58,4 +58,14 @@ class Controller{
 			include(APP.'views/'.$view_name.'.php');
 		}
 	}
+	
+	function auth(){
+		if(ENV=='public'){
+			if(!isset($_SESSION['id'])){
+				header('Location: login');
+				exit;
+			}
+		}
+		return $this;
+	}
 }
