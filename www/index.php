@@ -110,7 +110,7 @@
 		echo 'page1<br/>';
 		include_once(APP.'controllers/'.$name.'.php');
 		echo 'page2<br/>';
-		return new $name(new Registry);
+		return new $name(/*new Registry*/);
 	}
 	
 	# for debugging purposes only
