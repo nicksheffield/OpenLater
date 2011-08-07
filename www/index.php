@@ -31,8 +31,10 @@
 	 * @return void
 	 * @author Nick Sheffield
 	 **/
-	$silex->get('unread', function(){	
+	$silex->get('unread', function(){
+		echo 'before';
 		return page('links')->unread();
+		echo 'after';
 	});
 	
 	/**
@@ -104,10 +106,9 @@
 	 * @author Nick Sheffield
 	 **/
 	function page($name){
-		echo 'hello';
+		echo 'page1';
 		include_once(APP.'controllers/'.$name.'.php');
-		global $_config;
-		
+		echo 'page2';
 		return new $name(new Registry);
 	}
 	

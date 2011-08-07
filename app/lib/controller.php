@@ -8,6 +8,7 @@ class Controller{
 	function __construct($registry){
 		$this->db = $registry->db();
 		$this->nav = $registry->nav();
+		echo 'controller init';
 	}
 	
 	
