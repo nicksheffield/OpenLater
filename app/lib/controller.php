@@ -24,10 +24,10 @@ class Controller{
 		
 		if($data) extract($data,EXTR_OVERWRITE);
 		
-		include(APP.'/views/layout/header.php');
-		include(APP.'/views/layout/nav.php');
-		include(APP.'/views/'.$view_name.'.php');
-		include(APP.'/views/layout/footer.php');
+		include(APP.'views/layout/header.php');
+		include(APP.'views/layout/nav.php');
+		include(APP.'views/'.$view_name.'.php');
+		include(APP.'views/layout/footer.php');
 	}
 	
 	/**
