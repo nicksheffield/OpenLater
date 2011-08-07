@@ -22,13 +22,11 @@
 	 **/
 	if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){
 		$site = 'localhost';
-	}else if($_SERVER['SERVER_ADDR'] == ''){
+	}else if($_SERVER['SERVER_ADDR'] == '10.60.5.13'){
 		$site = 'pagodabox';
 	}else{
 		$site = 'nicksheffield.com';
 	}
-	
-	echo $_SERVER['SERVER_ADDR'];
 	
 	define('SITE',$site);
 	
