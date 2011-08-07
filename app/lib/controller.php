@@ -7,11 +7,8 @@ class Controller{
 	protected $nav;
 	
 	function __construct($registry){
-		echo 'controller1<br/>';
 		$this->db = $registry->db;
-		echo 'controller2<br/>';
 		$this->nav = $registry->nav;
-		echo 'controller3<br/>';
 	}
 	
 	

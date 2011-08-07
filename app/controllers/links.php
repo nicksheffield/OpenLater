@@ -3,23 +3,10 @@
 
 class Links extends Controller{
 	
-	protected $db;
-	protected $nav;
-	
-	function __construct($registry){
-		echo 'links1<br/>';
-		$this->db = $registry->db;
-		echo 'links2<br/>';
-		$this->nav = $registry->nav;
-		echo 'links3<br/>';
-	}
-	
 	function unread(){
-		echo 'unread1<br/>';
 		$this->db->where('stored','0');
 		$data['result'] = $this->db->get('id','title','url','date','email');
 		
-		echo 'unread2<br/>';
 		return $this->generate('links',$data);
 	}
 	
