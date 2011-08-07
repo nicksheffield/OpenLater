@@ -1,11 +1,31 @@
 <?php
 	
+	
+	/**
+	 * The location of the app folder
+	 *
+	 * @var constant
+	 **/
 	define('APP','../app/');
 	
+	
+	/**
+	 * Either public or private, determines whether to check for authentication
+	 *
+	 * @var constant
+	 **/
+	define('ENV','public');
+	
+	
+	/**
+	 * Load all the necessary classes and resources
+	 **/
 	require_once APP.'core/silex.phar';
 	require_once APP.'core/registry.php';
 	require_once APP.'lib/controller.php';
 	require_once APP.'lib/sqlite.php';
+	require_once APP.'lib/google_login.php';
+	
 	
 	/**
 	 * The system that this app runs on
@@ -23,6 +43,17 @@
 	 **/
 	$silex->get('/', function() use($silex){
 		return $silex->redirect('unread');
+	});
+	
+	
+	/**
+	 * Retrieve the users google login details
+	 *
+	 * @return void
+	 * @author Nick Sheffield
+	 **/
+	$silex->get('/login', function(){
+		return page('user')->authenticate();
 	});
 	
 	

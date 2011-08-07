@@ -27,6 +27,7 @@ class Controller{
 		
 		$_pages = '';
 		
+		$_pages .= $this->load_view('layout/head',$data,true);
 		$_pages .= $this->load_view('layout/header',$data,true);
 		$_pages .= $this->load_view('layout/nav',$data,true);
 		$_pages .= $this->load_view($view_name,$data,true);
