@@ -3,6 +3,7 @@
 
 class Actions extends Controller{
 	
+	
 	/**
 	 * Create a link record by its title and url
 	 *
@@ -27,8 +28,8 @@ class Actions extends Controller{
 		));
 		
 		return $_output;
-		
 	}
+	
 	
 	/**
 	 * Delete a link record by its id
@@ -41,6 +42,7 @@ class Actions extends Controller{
 	function delete($id){
 		return $this->db->del('id',$id);
 	}
+	
 	
 	/**
 	 * Store a link record by its id

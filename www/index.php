@@ -104,6 +104,7 @@
 	 * @author Nick Sheffield
 	 **/
 	function page($name){
+		echo 'hello';
 		include_once(APP.'controllers/'.$name.'.php');
 		global $_config;
 		
