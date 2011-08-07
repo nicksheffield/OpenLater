@@ -6,8 +6,12 @@ class Links extends Controller{
 	protected $db;
 	protected $nav;
 	
-	function __construct(){
-		echo 'links<br/>';
+	function __construct($registry){
+		echo 'links1<br/>';
+		$this->db = $registry->db;
+		echo 'links2<br/>';
+		$this->nav = $registry->nav;
+		echo 'links3<br/>';
 	}
 	
 	function unread(){
