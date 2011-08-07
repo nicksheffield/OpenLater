@@ -10,7 +10,7 @@ class Registry{
 	);
 	
 	function __construct(){
-		$db->start_table('links',"
+		$this->db->start_table('links',"
 			CREATE TABLE links(
 			id INTEGER PRIMARY KEY,
 			title VARCHAR(100) NOT NULL,
