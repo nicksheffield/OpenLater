@@ -14,6 +14,13 @@
 	 **/
 	$silex = new Silex\Application();
 	
+	
+	use Symfony\Component\HttpFoundation\Response;
+	
+	$app->error(function (\Exception $e, $code) {
+	    return new Response('We are sorry, but something went terribly wrong.', $code);
+	});
+	
 	/**
 	 * If there is no page segment supplied in the url, redirect to the 'unread' page
 	 *
@@ -109,8 +116,7 @@
 		echo 'page1';
 		include_once(APP.'controllers/'.$name.'.php');
 		echo 'page2';
-		$reg = new Registry;
-		return new $name($reg);
+		return new $name(new Registry);
 	}
 	
 	# for debugging purposes only
