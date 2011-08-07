@@ -1,11 +1,10 @@
 <?php
 	
 	/**
-	 *
 	 * Begin the session
-	 *
 	 **/
 	session_start();
+	
 	
 	/**
 	 * The location of the app folder
@@ -16,15 +15,20 @@
 	
 	
 	/**
-	 * Either public or private, determines whether to check for authentication
+	 * Let's the app know where it's being used. If it's localhost, no auth happens
+	 * Also, is used in the bookmarklet js code
 	 *
 	 * @var constant
 	 **/
 	if($_SERVER['SERVER_ADDR'] == '127.0.0.1'){
-		define('ENV','private');
+		$site = 'localhost';
+	}else if($_SERVER['SERVER_ADDR'] == ''){
+		$site = 'pagodabox';
 	}else{
-		define('ENV','public');
+		$site = 'nicksheffield.com';
 	}
+	
+	define('SITE',$site);
 	
 	
 	/**

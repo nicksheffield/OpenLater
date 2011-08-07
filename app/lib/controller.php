@@ -73,7 +73,7 @@ class Controller{
 	 * @author Nick Sheffield
 	 **/
 	function auth(){
-		if(ENV=='public'){
+		if(SITE!='localhost'){
 			if(!isset($_SESSION['id'])){
 				header('Location: login');
 				exit;

@@ -1,6 +1,13 @@
 <a class="save" href="javascript:(function(){
 	var iframe=document.createElement('iframe');
-	iframe.setAttribute('src','http://openlater/create?t='+document.title+'&u='+window.location.href);
+	iframe.setAttribute('src','<?php 
+		if(SITE=='localhost'){ 
+			echo 'http://openlater/'; 
+		}elseif(SITE=='pagodabox'){ 
+			echo 'http://openlater.pagodabox.com/'; 
+		}else{ 
+			echo 'http://openlater.nicksheffield.com/'; 
+	} ?>create?t='+document.title+'&u='+window.location.href);
 	iframe.style.display='none';
 	document.body.appendChild(iframe);
 	
