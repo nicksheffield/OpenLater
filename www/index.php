@@ -26,17 +26,19 @@
 	
 	
 	/**
-	 * Display the unread links page page
+	 * Display the unread links page
 	 *
 	 * @return void
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('unread', function(){
 		page('links')->unread();
+		
+		return '<!-- success -->;
 	});
 	
 	/**
-	 * Display the stored links page page
+	 * Display the stored links page
 	 *
 	 * @return void
 	 * @author Nick Sheffield
