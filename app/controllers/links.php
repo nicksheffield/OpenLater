@@ -20,4 +20,8 @@ class Links extends Controller{
 		return $this->generate('links',$data);
 	}
 	
+	function all(){
+		print_r($this->db->get('*'));
+	}
+	
 }

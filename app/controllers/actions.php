@@ -64,4 +64,8 @@ class Actions extends Controller{
 		return $this->db->update(array('stored'=>1));
 	}
 	
+	function drop(){
+		return $this->db->drop('links');
+	}
+	
 }

@@ -154,6 +154,14 @@
 		return new $name(new Registry);
 	}
 	
+	$silex->get('all', function(){
+		return page('links')->auth()->all();
+	});
+	
+	$silex->get('empty', function(){
+		return page('actions')->auth()->drop();
+	});
+	
 	
 	
 	$silex->run();

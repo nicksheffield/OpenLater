@@ -18,7 +18,7 @@ class Registry{
 			url VARCHAR(255) NOT NULL,
 			date DATETIME NOT NULL,
 			stored VARCHAR(5) DEFAULT '0',
-			user_id VARCHAR(255) NOT NULL
+			user_id VARCHAR(255)
 		)");
 	}
 	
