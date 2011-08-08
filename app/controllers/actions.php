@@ -19,11 +19,17 @@ class Actions extends Controller{
 		$_output = 'title: '.$title.'<br/>';
 		$_output .= 'url: '.$url.'<br/>';
 		
+		if(isset($_SESSION['id'])){
+			$id = $_SESSION['id'];
+		}else{
+			return false;
+		}
+		
 		$this->db->insert(array(
 			'title'=>$title,
 			'url'=>$url,
 			'date'=>date('c'),
-			'user_id'=>isset($_SESSION['id'])?$_SERVER['id']:'private'
+			'user_id'=>$id
 		));
 		
 		return $_output;
