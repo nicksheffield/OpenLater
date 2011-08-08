@@ -22,8 +22,7 @@ class Actions extends Controller{
 		if(isset($_SESSION['id'])){
 			$id = $_SESSION['id'];
 		}else{
-			return false;
-		}
+			$id = 'local';
 		
 		date_default_timezone_set('Pacific/Auckland');
 		
