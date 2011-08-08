@@ -19,7 +19,6 @@ class Actions extends Controller{
 		$_output = 'title: '.$title.'<br/>';
 		$_output .= 'url: '.$url.'<br/>';
 		
-		$this->db->table('links');
 		$this->db->insert(array(
 			'title'=>$title,
 			'url'=>$url,

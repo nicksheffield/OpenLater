@@ -110,7 +110,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('create', function(){
-		return page('actions')->auth()->create($_GET['t'],$_GET['u']);
+		return page('actions')->create($_GET['t'],$_GET['u']);
 	});
 	
 	
