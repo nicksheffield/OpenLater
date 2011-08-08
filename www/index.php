@@ -110,7 +110,7 @@
 	 * @author Nick Sheffield
 	 **/
 	$silex->get('create', function(){
-		return page('actions')->create($_GET['t'],$_GET['u']);
+		return page('actions')->auth()->create($_GET['t'],$_GET['u']);
 	});
 	
 	
@@ -154,12 +154,19 @@
 		return new $name(new Registry);
 	}
 	
-	$silex->get('all', function(){
-		return page('links')->auth()->all();
+	/**
+	 *
+	 * For debugging purposes. Show all, and delete all
+	 *
+	 **/
+	$silex->get('all/{$pw}', function($pw){
+		if(md5($pw)=='c50ae488e43a6225554049478e35da85')
+			return page('links')->auth()->all();
 	});
 	
-	$silex->get('empty', function(){
-		return page('actions')->auth()->drop();
+	$silex->get('empty/{$pw}', function($pw){
+		if(md5($pw)=='c50ae488e43a6225554049478e35da85')
+			return page('actions')->auth()->drop();
 	});
 	
 	

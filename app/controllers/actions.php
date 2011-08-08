@@ -33,7 +33,6 @@ class Actions extends Controller{
 			'date'=>date('c'),
 			'user_id'=>$id
 		));
-		
 		return $_output.$q;
 	}
 	
