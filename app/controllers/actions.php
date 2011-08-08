@@ -25,14 +25,16 @@ class Actions extends Controller{
 			return false;
 		}
 		
-		$this->db->insert(array(
+		date_default_timezone_set('Pacific/Auckland');
+		
+		$q = $this->db->insert(array(
 			'title'=>$title,
 			'url'=>$url,
 			'date'=>date('c'),
 			'user_id'=>$id
 		));
 		
-		return $_output;
+		return $_output.$q;
 	}
 	
 	

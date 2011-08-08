@@ -134,7 +134,7 @@ class sqlite {
          */
 	public function insert($arr){
 		
-		$q = "INSERT INTO $this->table( ";
+		$q = "INSERT INTO ".$this->table."( ";
 		
 		foreach($arr as $key=>$value){
 			$key = sqlite_escape_string($key);
